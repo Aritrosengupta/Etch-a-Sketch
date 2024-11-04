@@ -1,6 +1,11 @@
 const container=document.querySelector("#container");
 
-let num=16;
+let num=8;
+let reset=document.querySelector("#reset");
+reset.addEventListener('click',()=>{
+    resetColor();
+    CreateGrid(num);
+})
 
 function CreateGrid(num){
     container.innerHTML='';
@@ -34,6 +39,13 @@ function randomColorGenerator(){
     }
     return color;
 
+}
+function resetColor(){
+    let allGrids=document.querySelectorAll(".grid");
+    for(let grid of allGrids){
+        grid.style.backgroundColor='white';
+    }
+    
 }
 
 // function mouseHandler(){
