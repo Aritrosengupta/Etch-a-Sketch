@@ -17,4 +17,7 @@ body{
     overflow: hidden;
     
 }
+.grid:hover{
+    background-color: aqua;
+}
 
