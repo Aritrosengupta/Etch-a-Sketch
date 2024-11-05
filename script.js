@@ -1,4 +1,17 @@
 const container=document.querySelector("#container");
+const Value=document.querySelector('#textfield');
+
+const submit=document.querySelector("#submit");
+// let number;
+
+submit.addEventListener('click',(event)=>{
+    event.preventDefault();
+    num=parseInt(getNumberOfGrids());
+    resetColor();
+    CreateGrid(num);
+})
+
+
 
 let num=8;
 let reset=document.querySelector("#reset");
@@ -46,6 +59,11 @@ function resetColor(){
         grid.style.backgroundColor='white';
     }
     
+}
+
+function getNumberOfGrids(){
+    const input=document.querySelector("#textfield");
+    return input.value;
 }
 
 // function mouseHandler(){
