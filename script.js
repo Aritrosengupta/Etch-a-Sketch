@@ -1,8 +1,20 @@
 const container=document.querySelector("#container");
 const Value=document.querySelector('#textfield');
-
+const Multi=document.querySelector("#multi");
+const Black=document.querySelector("#Black");
 const submit=document.querySelector("#submit");
+let color;
 // let number;
+let ColorPicker=true;
+
+Multi.addEventListener('click',()=>{
+    ColorPicker=true;
+    
+})
+Black.addEventListener('click',()=>{
+    ColorPicker=false;
+    
+})
 
 submit.addEventListener('click',(event)=>{
     event.preventDefault();
@@ -34,7 +46,12 @@ function CreateGrid(num){
         grid.style.boxSizing = 'border-box';
 
       const mouseHandler=()=>{
-        let color=randomColorGenerator();
+        if(ColorPicker){
+            let color=randomColorGenerator();
+        }
+        else{
+            color="#000000";
+        }
         grid.style.backgroundColor=color;
         grid.removeEventListener('mouseover',mouseHandler);
       }
