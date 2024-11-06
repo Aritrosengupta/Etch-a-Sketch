@@ -5,6 +5,7 @@ const Black=document.querySelector("#Black");
 const submit=document.querySelector("#submit");
 const validate=document.querySelector("#validate");
 let color;
+let opacity=0;
 // let number;
 let ColorPicker=true;
 
@@ -24,6 +25,7 @@ submit.addEventListener('click',(event)=>{
     if(!isNaN(num) && num>=4 &&num<=120){
         resetColor();
         CreateGrid(num);
+        opacity=0;
     }
     else{
         validate.textContent="Please pick a number between 1 and 120";
@@ -56,6 +58,8 @@ function CreateGrid(num){
       const mouseHandler=()=>{
         if(ColorPicker){
             let color=randomColorGenerator();
+            grid.style.opacity=opacity.toString();
+            opacity+=0.1;
         }
         else{
             color="#000000";
