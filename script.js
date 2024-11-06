@@ -3,6 +3,7 @@ const Value=document.querySelector('#textfield');
 const Multi=document.querySelector("#multi");
 const Black=document.querySelector("#Black");
 const submit=document.querySelector("#submit");
+const validate=document.querySelector("#validate");
 let color;
 // let number;
 let ColorPicker=true;
@@ -18,9 +19,16 @@ Black.addEventListener('click',()=>{
 
 submit.addEventListener('click',(event)=>{
     event.preventDefault();
+    validate.textContent="";
     num=parseInt(getNumberOfGrids());
-    resetColor();
-    CreateGrid(num);
+    if(!isNaN(num) && num>=4 &&num<=120){
+        resetColor();
+        CreateGrid(num);
+    }
+    else{
+        validate.textContent="Please pick a number between 1 and 120";
+    }
+   
 })
 
 
