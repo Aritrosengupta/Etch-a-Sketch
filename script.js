@@ -29,6 +29,7 @@ submit.addEventListener('click',(event)=>{
     }
     else{
         validate.textContent="Please pick a number between 1 and 120";
+        validate.style.color="red";
     }
    
 })
@@ -39,6 +40,7 @@ let num=8;
 let reset=document.querySelector("#reset");
 reset.addEventListener('click',()=>{
     resetColor();
+    opacity=0;
     CreateGrid(num);
 })
 
